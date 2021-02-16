@@ -1,0 +1,135 @@
+.header
+{
+    background-image: url(nature-background.jpg);
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 100px;
+    margin-bottom: 0px;
+    padding: 10px;
+    height: 600px;
+    box-shadow: 5px 3px 10px gray;
+}
+.header h1
+{
+    font-size: 70px;
+    line-height: 100px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+.header i
+{
+    font-size: 70px;
+    color: #ffffff;
+    margin-left: 10px;
+    margin-top: 40px;
+    font-weight: normal;
+}
+.todo-list
+{
+    box-shadow: 5px 3px 10px gray;
+    background-color: #ffffff;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    margin-top: 0px;
+    padding: 25px;
+}
+.item-no
+{
+    background-color: #276DF2;
+    height: 50px;
+    width: 50px;
+    margin-top: 10px;
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+}
+.item-no p
+{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;    
+}
+.item-name
+{
+    display: inline-block;
+    margin-left: 20px;
+}
+.items
+{
+    border-bottom: solid 2px #769CF1;
+}
+.item-name .title
+{
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.delete-btn
+{
+    border-radius: 50px;
+    background-color: red;
+    height: 40px;
+    width: 40px;
+}
+.btn-div
+{
+    display: inline-block;
+    color: #ffffff;
+    float: right;
+    margin-top: 10px;
+}
+.btn-div i
+{
+    font-size: 20px;
+}
+.delete-btn:hover
+{
+    color: #ffffff;
+}
+.add-btn
+{
+    border-radius: 50px;
+    background-color: #276DF2;
+    height: 40px;
+    width: 40px; 
+}
+.add-list
+{
+    color: #ffffff;
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    right: 125px;
+}
+.add-btn:hover
+{
+    color: #ffffff;
+}
+.user-things-div
+{
+    background-color: #46529E;
+}
+.user-things-div h4
+{
+    color: #ffffff;
+}
+.user-things-div label
+{
+    color: #ffffff;
+}
+.add-things-btn
+{
+ font-weight: bold;
+ font-size: 13px;
+}
+.btn-add-div
+{
+    text-align: center;
+}
