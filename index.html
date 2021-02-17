@@ -31,20 +31,7 @@
         </div>
     </div>
 
-    <div class="todo-list">
-        <div class="items">
-            <div class="item-no">
-                <p>1</p>
-            </div>
-            <div class="item-name">
-                <p class="title">Title</p>
-                <p>Description</p>
-            </div>
-            <div class="btn-div">
-                <button class="btn delete-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
-            </div>
-        </div>
-    </div>
+    <div class="todo-list"></div>
 
     <div class="add-list">
         <button class="btn add-btn" id="add-contact" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"
@@ -64,16 +51,17 @@
                     <form>
                         <div class="form-group">
                             <label for="name">Title</label>
-                            <input type="text" class="form-control" id="name1">
+                            <input type="text" class="form-control" id="title">
                         </div>
                         <div class="form-group">
                             <label for="email">Description</label>
-                            <input type="email" class="form-control" id="email1">
+                            <input type="email" class="form-control" id="description">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer btn-add-div">
-                    <button type="button" class="btn btn-default add-things-btn" data-dismiss="modal" onClick="w">ADD
+                    <button type="button" class="btn btn-default add-things-btn" data-dismiss="modal"
+                        onClick="addThings()">ADD
                         YOUR THINGS</button>
                 </div>
             </div>
