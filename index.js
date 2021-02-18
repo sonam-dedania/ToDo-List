@@ -20,6 +20,10 @@ function addThings() {
     $('#description').val('');
 }
 
+function deleteThings(j) {
+    $('.todo-list .items').eq(j).addClass('gry');
+}
+
 function displayThings() {
 
     let thingsObject = "";
@@ -35,7 +39,7 @@ function displayThings() {
         thingsObject += '            <p>' + todo[i].description1 + '</p>';
         thingsObject += '        </div>';
         thingsObject += '    <div class="btn-div">';
-        thingsObject += '        <button class="btn delete-btn"><i class="fa fa-times" aria-hidden="true"></i></button>';
+        thingsObject += '        <button class="btn delete-btn" onClick="deleteThings(' + i + ')"><i class="fa fa-times" aria-hidden="true"></i></button>';
         thingsObject += '    </div>';
         thingsObject += '    </div>';
     }

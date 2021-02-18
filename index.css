@@ -61,6 +61,10 @@
     display: inline-block;
     margin-left: 20px;
 }
+.gry
+{
+    color: lightgrey;
+}
 .items
 {
     border-bottom: solid 2px #769CF1;
