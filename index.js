@@ -1,4 +1,32 @@
 let todo = [];
+let cookieVal = getCookie("todo");
+if (cookieVal) {
+    todo = JSON.parse(cookieVal);
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
 
 function addThings() {
 
@@ -11,9 +39,11 @@ function addThings() {
     let newThings = {
         title1: t,
         description1: d,
+        isDone: false
     };
 
     todo.push(newThings);
+    setCookie("todo", JSON.stringify(todo), 30);
     displayThings();
 
     $('#title').val('');
@@ -21,16 +51,25 @@ function addThings() {
 }
 
 function deleteThings(j) {
-    $('.todo-list .items').eq(j).addClass('gry');
+    //$('.todo-list .items').eq(j).addClass('gry');
+
+    // setCookie("delete-todo", JSON.stringify(todo[j]), 30);
+    todo[j].isDone = true;
+    setCookie("todo", JSON.stringify(todo), 30);
+    displayThings();
 }
 
 function displayThings() {
 
     let thingsObject = "";
 
+    // let todo = getCookie("todo");
+    // todo = JSON.parse(todo);
+
     for (let i = 0; i < todo.length; i++) {
 
-        thingsObject += '<div class="items">';
+        let status = (todo[i].isDone) ? 'gry' : '';
+        thingsObject += '<div class="items ' + status + '">';
         thingsObject += '<div class="item-no">';
         thingsObject += '<p>' + (i + 1) + '</p>';
         thingsObject += '        </div>';
