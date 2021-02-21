@@ -56,6 +56,11 @@
     font-size: 20px;
     font-weight: bold;    
 }
+#datetime{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
 .item-name
 {
     display: inline-block;
@@ -141,3 +146,4 @@
 {
     text-align: center;
 }
+

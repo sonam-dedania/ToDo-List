@@ -1,3 +1,11 @@
+// ToDo
+// 1 - Time styling
+// 2 - Mobile responsiveness
+// 3 - Add count (Pending, total)
+// 4 - Time of ToDo item
+// 5 - Show progress bar of completed items 
+// 6 - Find profile from - https://github.com/Dipen-Dedania/awesome-github-profile-pages
+
 let todo = [];
 let cookieVal = getCookie("todo");
 if (cookieVal) {
@@ -70,7 +78,7 @@ function displayThings() {
 
         let status = (todo[i].isDone) ? 'gry' : '';
         thingsObject += '<div class="items ' + status + '">';
-        thingsObject += '<div class="item-no">';
+        thingsObject += '<div class="item-no animate__animated animate__zoomIn">';
         thingsObject += '<p>' + (i + 1) + '</p>';
         thingsObject += '        </div>';
         thingsObject += '    <div class="item-name">';
@@ -86,8 +94,20 @@ function displayThings() {
     $('.todo-list').html(thingsObject);
 }
 
+
 $(document).ready(function () {
 
+    setInterval(function () {
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    }, 1000);
+
     displayThings();
+    // clock();
+
+    // setInterval(function () {
+    //     alert("Hey Sonam!")
+    // }, 5000);
+
 });
 
