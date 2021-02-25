@@ -137,6 +137,7 @@ $(document).ready(function () {
     document.getElementById("total-count").innerHTML = totalcount;
 
     let count = 0;
+    let progressObj = "";
 
     for (let i = 0; i < todo.length; i++) {
 
@@ -147,6 +148,18 @@ $(document).ready(function () {
             document.getElementById('pending-count').innerHTML = pending;
         }
     }
+
+    let done = count;
+    let pending = totalcount - done;
+    let completed = 100 / totalcount * done;
+
+    progressObj += '<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"'
+    'style = "width:' + completed + '%" >';
+    progressObj += '<span class="sr-only">' + completed + '% Complete</span>';
+    progressObj += '</div>';
+
+    $('.progress').html(progressObj);
+
     // clock();
     // setInterval(function () {
     //     alert("Hey Sonam!")
