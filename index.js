@@ -8,6 +8,7 @@
 
 let todo = [];
 let cookieVal = getCookie("todo");
+
 if (cookieVal) {
     todo = JSON.parse(cookieVal);
 }
@@ -35,11 +36,11 @@ function getCookie(cname) {
     return "";
 }
 
-
 function addThings() {
 
     let t = "";
     let d = "";
+    let tm = new Date();
 
     t = $('#title').val();
     d = $('#description').val();
@@ -47,12 +48,17 @@ function addThings() {
     let newThings = {
         title1: t,
         description1: d,
-        isDone: false
+        isDone: false,
+        time: tm
     };
 
     todo.push(newThings);
     setCookie("todo", JSON.stringify(todo), 30);
+
     displayThings();
+
+    let totalcount = document.getElementById("todo-list").childElementCount;
+    document.getElementById("total-count").innerHTML = totalcount;
 
     $('#title').val('');
     $('#description').val('');
@@ -63,8 +69,10 @@ function deleteThings(j) {
 
     // setCookie("delete-todo", JSON.stringify(todo[j]), 30);
     todo[j].isDone = true;
+
     setCookie("todo", JSON.stringify(todo), 30);
     displayThings();
+
 }
 
 function displayThings() {
@@ -74,9 +82,21 @@ function displayThings() {
     // let todo = getCookie("todo");
     // todo = JSON.parse(todo);
 
+    let count = 0;
+
     for (let i = 0; i < todo.length; i++) {
 
+        let totalcount = document.getElementById("todo-list").childElementCount;
+
+        if (todo[i].isDone == true) {
+            count = count + 1;
+            let done = count;
+            let pending = totalcount - done;
+            document.getElementById('pending-count').innerHTML = pending;
+        }
+
         let status = (todo[i].isDone) ? 'gry' : '';
+
         thingsObject += '<div class="items ' + status + '">';
         thingsObject += '<div class="item-no animate__animated animate__zoomIn">';
         thingsObject += '<p>' + (i + 1) + '</p>';
@@ -84,16 +104,15 @@ function displayThings() {
         thingsObject += '    <div class="item-name">';
         thingsObject += '            <p class="title">' + todo[i].title1 + '</p>';
         thingsObject += '            <p>' + todo[i].description1 + '</p>';
+        thingsObject += '            <p>' + todo[i].time + '</p>';
         thingsObject += '        </div>';
         thingsObject += '    <div class="btn-div">';
-        thingsObject += '        <button class="btn delete-btn" onClick="deleteThings(' + i + ')"><i class="fa fa-times" aria-hidden="true"></i></button>';
+        thingsObject += '        <button id="del-btn" class="btn delete-btn" onClick="deleteThings(' + i + ')"><i class="fa fa-times" aria-hidden="true"></i></button>';
         thingsObject += '    </div>';
         thingsObject += '    </div>';
     }
-
     $('.todo-list').html(thingsObject);
 }
-
 
 $(document).ready(function () {
 
@@ -103,11 +122,23 @@ $(document).ready(function () {
     }, 1000);
 
     displayThings();
-    // clock();
 
+    let totalcount = document.getElementById("todo-list").childElementCount;
+    document.getElementById("total-count").innerHTML = totalcount;
+
+    let count = 0;
+
+    for (let i = 0; i < todo.length; i++) {
+
+        if (todo[i].isDone == true) {
+            count = count + 1;
+            let done = count;
+            let pending = totalcount - done;
+            document.getElementById('pending-count').innerHTML = pending;
+        }
+    }
+    // clock();
     // setInterval(function () {
     //     alert("Hey Sonam!")
     // }, 5000);
-
 });
-

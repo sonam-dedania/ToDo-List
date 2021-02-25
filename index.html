@@ -18,17 +18,21 @@
     <div class="header">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                     <i class="fa fa-check-square-o" aria-hidden="true"></i>
                     <h1 class="animate__animated animate__backInDown">My ToDo</h1>
                     <p id="datetime"></p>
                 </div>
             </div>
         </div>
+        <div class="count">
+            <p class="left">Total: <span id="total-count"></span></p>
+            <p class="right">Pending: <span id="pending-count"></span></p>
+            </p>
+        </div>
     </div>
 
-    <div class="todo-list">
-
+    <div class="todo-list" id="todo-list">
     </div>
 
     <div class="add-list">

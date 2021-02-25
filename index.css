@@ -1,9 +1,9 @@
 .header
 {
     background-image: url(nature-background.jpg);
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
     margin-bottom: 0px;
     padding: 10px;
     height: 600px;
@@ -31,9 +31,9 @@
 {
     box-shadow: 5px 3px 10px gray;
     background-color: #ffffff;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-bottom: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
     margin-top: 0px;
     padding: 25px;
 }
@@ -146,4 +146,20 @@
 {
     text-align: center;
 }
-
+.left
+{
+    float: left;
+    margin-left: 10px;
+}
+.right
+{
+    float: right;
+    margin-right: 10px;
+}
+.count
+{
+    color: #ffffff;
+    font-size: 30px;
+    margin-top: 200px;
+    display: inline;
+}
