@@ -42,6 +42,14 @@ function addThings() {
     let d = "";
     let tm = new Date();
 
+    var hours = tm.getHours();
+    var minutes = tm.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+
     t = $('#title').val();
     d = $('#description').val();
 
@@ -49,7 +57,7 @@ function addThings() {
         title1: t,
         description1: d,
         isDone: false,
-        time: tm
+        time: strTime
     };
 
     todo.push(newThings);
@@ -104,6 +112,8 @@ function displayThings() {
         thingsObject += '    <div class="item-name">';
         thingsObject += '            <p class="title">' + todo[i].title1 + '</p>';
         thingsObject += '            <p>' + todo[i].description1 + '</p>';
+        thingsObject += '        </div>';
+        thingsObject += '    <div class="item-time">';
         thingsObject += '            <p>' + todo[i].time + '</p>';
         thingsObject += '        </div>';
         thingsObject += '    <div class="btn-div">';
