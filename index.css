@@ -172,3 +172,19 @@
     margin-top: 300px;
     display: inline;
 }
+.progress-div
+{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 0px;
+    margin-bottom: 20px;  
+}
+.progress-bar-clr
+{
+    background-color: #276DF2 !important;
+}
+.progress-height
+{
+    height: 13px !important;
+    border-radius: 0px !important;
+}

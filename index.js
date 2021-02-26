@@ -122,6 +122,7 @@ function displayThings() {
         thingsObject += '    </div>';
     }
     $('.todo-list').html(thingsObject);
+
 }
 
 $(document).ready(function () {
@@ -151,14 +152,14 @@ $(document).ready(function () {
 
     let done = count;
     let pending = totalcount - done;
-    let completed = 100 / totalcount * done;
+    let completed = done / totalcount * 100;
 
-    progressObj += '<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"'
-    'style = "width:' + completed + '%" >';
-    progressObj += '<span class="sr-only">' + completed + '% Complete</span>';
+    progressObj += '<div class="progress progress-height">';
+    progressObj += '<div class="progress-bar progress-bar-clr" role="progressbar" aria-valuenow="' + completed + '" aria-valuemin="0" aria-valuemax="100" style = "width:' + completed + '%">';
+    progressObj += '</div>';
     progressObj += '</div>';
 
-    $('.progress').html(progressObj);
+    $('.progress-div').html(progressObj);
 
     // clock();
     // setInterval(function () {
