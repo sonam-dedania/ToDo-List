@@ -1,9 +1,9 @@
 // ToDo
-// 1 - Time styling
+// 1 - Remove progressbar spacing between list
 // 2 - Mobile responsiveness
-// 3 - Add count (Pending, total)
-// 4 - Time of ToDo item
-// 5 - Show progress bar of completed items 
+// 3 - Pending, total - update styling
+// 4 - Time of ToDo should be on right side below close button
+// 5 - Progress bar fill animation
 // 6 - Find profile from - https://github.com/Dipen-Dedania/awesome-github-profile-pages
 
 let todo = [];
@@ -65,9 +65,6 @@ function addThings() {
 
     displayThings();
 
-    let totalcount = document.getElementById("todo-list").childElementCount;
-    document.getElementById("total-count").innerHTML = totalcount;
-
     $('#title').val('');
     $('#description').val('');
 }
@@ -91,16 +88,11 @@ function displayThings() {
     // todo = JSON.parse(todo);
 
     let count = 0;
+    let totalcount = todo.length;
 
     for (let i = 0; i < todo.length; i++) {
-
-        let totalcount = document.getElementById("todo-list").childElementCount;
-
         if (todo[i].isDone == true) {
             count = count + 1;
-            let done = count;
-            let pending = totalcount - done;
-            document.getElementById('pending-count').innerHTML = pending;
         }
 
         let status = (todo[i].isDone) ? 'gry' : '';
@@ -121,7 +113,37 @@ function displayThings() {
         thingsObject += '    </div>';
         thingsObject += '    </div>';
     }
+
     $('.todo-list').html(thingsObject);
+    let pending = totalcount - count;
+    document.getElementById('pending-count').innerHTML = pending;
+    document.getElementById('total-count').innerHTML = totalcount;
+    progressBar();
+}
+
+function progressBar() {
+
+    let count = 0;
+    let progressObj = "";
+    let totalcount = todo.length;
+
+    for (let i = 0; i < todo.length; i++) {
+
+        if (todo[i].isDone == true) {
+            count = count + 1;
+        }
+    }
+
+    let done = count;
+    let pending = totalcount - done;
+    let completed = done / totalcount * 100;
+
+    progressObj += '<div class="progress progress-height">';
+    progressObj += '<div id="pb" class="progress-bar progress-bar-clr" role="progressbar" aria-valuenow="' + completed + '" aria-valuemin="0" aria-valuemax="100" style = "max-width:' + completed + '%">';
+    progressObj += '</div>';
+    progressObj += '</div>';
+
+    $('.progress-div').html(progressObj);
 
 }
 
@@ -133,33 +155,6 @@ $(document).ready(function () {
     }, 1000);
 
     displayThings();
-
-    let totalcount = document.getElementById("todo-list").childElementCount;
-    document.getElementById("total-count").innerHTML = totalcount;
-
-    let count = 0;
-    let progressObj = "";
-
-    for (let i = 0; i < todo.length; i++) {
-
-        if (todo[i].isDone == true) {
-            count = count + 1;
-            let done = count;
-            let pending = totalcount - done;
-            document.getElementById('pending-count').innerHTML = pending;
-        }
-    }
-
-    let done = count;
-    let pending = totalcount - done;
-    let completed = done / totalcount * 100;
-
-    progressObj += '<div class="progress progress-height">';
-    progressObj += '<div class="progress-bar progress-bar-clr" role="progressbar" aria-valuenow="' + completed + '" aria-valuemin="0" aria-valuemax="100" style = "width:' + completed + '%">';
-    progressObj += '</div>';
-    progressObj += '</div>';
-
-    $('.progress-div').html(progressObj);
 
     // clock();
     // setInterval(function () {
