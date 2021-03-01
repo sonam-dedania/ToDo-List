@@ -1,8 +1,4 @@
-// ToDo
-// 1 - Remove progressbar spacing between list
 // 2 - Mobile responsiveness
-// 3 - Pending, total - update styling
-// 4 - Time of ToDo should be on right side below close button
 // 5 - Progress bar fill animation
 // 6 - Find profile from - https://github.com/Dipen-Dedania/awesome-github-profile-pages
 
@@ -103,10 +99,8 @@ function displayThings() {
         thingsObject += '        </div>';
         thingsObject += '    <div class="item-name">';
         thingsObject += '            <p class="title">' + todo[i].title1 + '</p>';
-        thingsObject += '            <p>' + todo[i].description1 + '</p>';
-        thingsObject += '        </div>';
-        thingsObject += '    <div class="item-time">';
-        thingsObject += '            <p>' + todo[i].time + '</p>';
+        thingsObject += '            <p class="description-p">' + todo[i].description1 + '</p>';
+        thingsObject += '            <p class="time-p">' + todo[i].time + '</p>';
         thingsObject += '        </div>';
         thingsObject += '    <div class="btn-div">';
         thingsObject += '        <button id="del-btn" class="btn delete-btn" onClick="deleteThings(' + i + ')"><i class="fa fa-times" aria-hidden="true"></i></button>';

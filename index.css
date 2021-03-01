@@ -9,6 +9,7 @@
     height: 600px;
     box-shadow: 5px 3px 10px gray;
 }
+
 .header h1
 {
     font-size: 57px;
@@ -35,7 +36,8 @@
     margin-right: 50px;
     margin-bottom: 50px;
     margin-top: 0px;
-    padding: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .item-no
 {
@@ -66,10 +68,16 @@
     display: inline-block;
     margin-left: 20px;
 }
-.item-time
+.item-name .description-p
 {
-    display: inline-block;
-    
+    display: inline;
+}
+.time-p
+{
+    position: absolute;
+    display: inline;
+    right: 64px;
+    float: right;    
 }
 .gry
 {
@@ -78,6 +86,8 @@
 .items
 {
     border-bottom: solid 2px #769CF1;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 .item-name .title
 {
@@ -89,20 +99,21 @@
 {
     border-radius: 50px;
     background-color: red;
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
 }
 .btn-div
 {
     display: inline-block;
     color: #ffffff;
     float: right;
-    margin-top: 23px;
+    position: relative;
+    margin-top: 6px;
 }
 .btn-div i
 {
-    font-size: 15px;
-    margin-left: -3px;
+    font-size: 18px;
+    margin-left: -2px;
 }
 .delete-btn:hover
 {
@@ -120,8 +131,8 @@
     color: #ffffff;
     position: fixed;
     z-index: 1;
-    bottom: 20px;
-    right: 110px;
+    bottom: 34px;
+    right: 50px;
 }
 .add-list i
 {
@@ -155,32 +166,72 @@
 .left
 {
     float: left;
+    margin-left: 10px;
     display: inline;
     margin-top: 10px;
 }
 .right
 {
+    margin-right: 10px;
     float: right;
     margin-top: 10px;
 }
 .count-div
 {
-    padding-left: 0px;
+    border-top: solid 1px gray;
+    width: 90%;
 }
+@media only screen and (max-width: 992px){
+    .count-div{
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 568px){
+    .count-div{
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 500px){
+    .count-div{
+        width: 60%;
+    }
+    .header h1
+    {
+        font-size: 40px;
+    }
+    #datetime
+    {
+        font-size: 15px;
+    }
+    .header i
+    {
+        font-size: 50px;
+    }
+    .add-btn{
+        border-radius: 50px;
+        height: 37px;
+        width: 37px; 
+    }
+    .add-btn i{
+        font-size: 15px;
+    }
+    }
+
+
 .count
 {
-    color: #ffffff;
+    color: gray;
     font-weight: bold;
-    font-size: 20px;
-    margin-top: 300px;
+    font-size: 15px;
     display: inline;
+    margin-bottom: 20px;
 }
 .progress-div
 {
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 0px;
-    margin-bottom: 20px;  
+    margin-bottom: 0px;  
 }
 .progress-bar-clr
 {
@@ -188,8 +239,9 @@
 }
 .progress-height
 {
-    height: 13px !important;
+    height: 7px !important;
     border-radius: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 .progress-bar {
