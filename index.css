@@ -39,6 +39,26 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+#total-count
+{
+    background-color:#26499D;    
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 50px;
+    font-size: 25px;
+}
+#pending-count
+{
+    background-color:#26499D;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 50px;
+    font-size: 25px;  
+}
 .item-no
 {
     background-color: #276DF2;
@@ -178,8 +198,8 @@
 }
 .count-div
 {
-    border-top: solid 1px gray;
     width: 90%;
+    margin-top: 23px;
 }
 @media only screen and (max-width: 992px){
     .count-div{
@@ -219,9 +239,9 @@
     }
 .count
 {
-    color: gray;
+    color:#ffffff;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
     display: inline;
     margin-bottom: 20px;
 }
